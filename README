@@ -1,0 +1,32 @@
+stringnetpy - A stringnet python implementation
+
+REFERENCE:
+---
+TITLE: StringNet as a Computational Resource for Discovering and Investigating Linguistic Constructions
+AUTHORS: David Wible - Nai-Lung Tsao
+URL: http://j.mp/stringnet
+
+
+DEFINITION OF HYBRID-GRAM:
+---
+In StringNet a hybrid-gram is defined by two criteria:
+1. it must include at least one lexical gram (which is either a lexeme or a specific word form)
+2. it must appear at least 5 times in BNC
+
+
+DISCUSSION AND PERSONAL CHOICES:
+---
+1. in Alice corpus there are not lexemes, but lemmas. I decided to consider lemmas instead of lexemes.
+According to Wikipedia, lemmas are a particular type of lexemes, so the decision makes sense 
+http://en.wikipedia.org/wiki/Lexeme
+
+2. I decided to filter out all sentences that contain one or more punctuation signs
+
+3. To operate vertical pruning I refer to this definition:
+"In a word, vertical pruning eliminates hybrid n-grams containing 
+POS grams which do not represent attested substitutability.", taken from the paper
+I use a threshold of 80% (same of paper)
+
+4. They filter out all hybrid-grams that do not occur at least 5 times in BNC (criterion 2)
+I decided to filter out hybrid-grams that do not occur at least 5 times in Alice
+
